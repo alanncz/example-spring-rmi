@@ -7,13 +7,23 @@ package alann.ifpb.shared;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author alann
  */
-public class Object implements Serializable{
-    
+@Entity
+@NamedQuery(name = "object.list", query = "select o from Object o")
+public class Object implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     private String item;
     private int qty;
     private LocalDateTime orderDate;
@@ -44,11 +54,9 @@ public class Object implements Serializable{
 
     @Override
     public String toString() {
-        return "Object{" +
-                "item='" + item + '\'' +
-                ", qty=" + qty +
-                ", orderDate=" + orderDate +
-                '}';
+        return "Object{" + "id=" + id + ", item=" + item + ", qty=" + qty + ", orderDate=" + orderDate + '}';
     }
-    
+
+
+
 }

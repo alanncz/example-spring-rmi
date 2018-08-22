@@ -13,8 +13,8 @@ import java.util.List;
  */
 public interface ObjectService {
 
-    void placeOrder(String item, int quantity);
-
-    List<Object> getObjectList();
+    void placeObject(String item, int quantity);
+    
+    List<Object> list();
 
 }

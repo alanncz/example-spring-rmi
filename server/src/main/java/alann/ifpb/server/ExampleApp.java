@@ -6,8 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 import java.net.UnknownHostException;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+@Import(PersistenceConfig.class)
+@ComponentScan(value = "alann.ifpb.server")
 public class ExampleApp {
 
     @Bean
@@ -26,7 +30,7 @@ public class ExampleApp {
     }
 
     public static void main(String[] args) {
-        new AnnotationConfigApplicationContext(ExampleApp.class);
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(ExampleApp.class);
     }
 
 }

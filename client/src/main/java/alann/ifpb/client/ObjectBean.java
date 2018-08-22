@@ -6,7 +6,6 @@
 package alann.ifpb.client;
 
 import alann.ifpb.shared.ObjectService;
-import alann.ifpb.shared.Object;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,14 +19,15 @@ public class ObjectBean {
     private ObjectService objectService;
 
     public void placeObject() {
-        objectService.placeOrder(" Computador de Mesa", 2);
-        objectService.placeOrder("Notbok", 3);
+        objectService.placeObject(" Computador de Mesa", 2);
+        objectService.placeObject("Notbok", 3);
     }
-
-    public void listObject() {
-        List<Object> objectList = objectService.getObjectList();
-        objectList.forEach((object) -> {
-            System.out.println(object);
+    
+    public void listObeject(){
+        List listObject = objectService.list();
+        listObject.forEach((o) -> {
+            System.out.println(o);
         });
     }
+
 }

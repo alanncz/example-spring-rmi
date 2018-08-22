@@ -39,7 +39,7 @@ public class ExampleClient {
                 new AnnotationConfigApplicationContext(ExampleClient.class);
         ObjectBean bean = context.getBean(ObjectBean.class);
         bean.placeObject();
-        bean.listObject();
+        bean.listObeject();
     }
 
 }
