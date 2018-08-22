@@ -14,19 +14,17 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author alann
  */
-public class OrderBean {
+public class ObjectBean {
 
     @Autowired
     private ObjectService objectService;
 
-    public void placeOrder() {
-        System.out.println("-- placing orders --");
+    public void placeObject() {
         objectService.placeOrder(" Computador de Mesa", 2);
         objectService.placeOrder("Notbok", 3);
     }
 
-    public void listOrders() {
-        System.out.println("-- getting order list from service --");
+    public void listObject() {
         List<Object> objectList = objectService.getObjectList();
         objectList.forEach((object) -> {
             System.out.println(object);

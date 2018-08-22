@@ -44,7 +44,7 @@ public class Object implements Serializable{
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "Object{" +
                 "item='" + item + '\'' +
                 ", qty=" + qty +
                 ", orderDate=" + orderDate +

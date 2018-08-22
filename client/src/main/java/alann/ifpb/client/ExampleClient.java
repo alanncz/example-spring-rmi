@@ -21,8 +21,8 @@ import org.springframework.remoting.rmi.RmiProxyFactoryBean;
 public class ExampleClient {
 
     @Bean
-    public OrderBean orderBean() {
-        return new OrderBean();
+    public ObjectBean orderBean() {
+        return new ObjectBean();
     }
 
     @Bean
@@ -37,9 +37,9 @@ public class ExampleClient {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ExampleClient.class);
-        OrderBean bean = context.getBean(OrderBean.class);
-        bean.placeOrder();
-        bean.listOrders();
+        ObjectBean bean = context.getBean(ObjectBean.class);
+        bean.placeObject();
+        bean.listObject();
     }
 
 }

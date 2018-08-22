@@ -25,7 +25,7 @@ public class ObjectServiceImpl implements ObjectService {
         object.setItem(item);
         object.setQty(quantity);
         object.setOrderDate(LocalDateTime.now());
-        System.out.println("placing order: "+ object);
+        System.out.println(object);
         objects.add(object);
     }
 
